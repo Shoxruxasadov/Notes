@@ -1,0 +1,189 @@
+// ===== Fonts Familt ===== \\
+@font-face {
+    font-family: Notes;
+    src: url(../fonts/ShiftyNotesRegular.ttf);
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts//Poppins-Regular.ttf);
+}
+
+// ===== Variables ===== \\
+$notesFonts: "Notes", sans-serif;
+$Poppins: "Poppins", sans-serif;
+$blue: #001D3D;
+$yellow: #F8FF79;
+
+// ===== Default Code ===== \\
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: default;
+    transition: 0.3s;
+    font-family: $Poppins;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+#note{
+    display: none;
+}
+
+// ===== Webkit Scroll ===== \\
+::-webkit-scrollbar {
+    width: 0.3em;
+    height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ced4da;
+    border-radius: 10rem;
+}
+
+// ===== Delete Default ===== \\
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button,
+input {
+    outline: none;
+    cursor: pointer;
+}
+
+// ======= Modal ======= \\
+.modal {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    transform: scale(0) rotate(0);
+    transition: all 0.6s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.active {
+        transform: scale(1) rotate(720deg);
+    }
+
+    .modal-adduser {
+        width: 500px;
+        height: 230px;
+        background-color: #ced4da;
+        border-radius: 1rem;
+        padding: 20px 30px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .modal-close {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: red;
+            border-radius: 0 1rem 0 1rem;
+            cursor: pointer;
+            box-shadow: inset 0 0 10px -3px black;
+
+            i {
+                color: #ced4da;
+                font-size: 25px;
+                cursor: pointer;   
+                text-shadow: 0 0 10px #001d3d7c;
+            }
+        }
+
+        .modal-title{
+            width: 100%;
+            line-height: 35px;
+
+            h1{
+                font-size: 28px;
+                color: #5e5e5e;
+                text-shadow: 0 0 2px #001d3d5f;
+            }
+        }
+        .modal-inp{
+            width: 100%;
+
+            input{
+                width: 90%;
+                height: 35px;
+                border-radius: 0.5rem;
+                border: none;
+                padding: 0 12px;
+                box-shadow: 0 0 10px white;
+                color: #001D3D;
+                text-shadow: 0 0 2px #001d3d7c;
+                font-size: 16px;
+                letter-spacing: 0.5px;
+
+                &:focus{
+                    width: 100%;
+                }
+            }
+        }
+        .modal-save{
+            width: 100%;
+            display: flex;
+            justify-content: end;
+            gap: 15px;
+
+            button:first-child{
+                width: 120px;
+                height: 35px;
+                background: gray;
+                border: none;
+                border-radius: 0 1rem 0 1rem;
+                font-size: 18px;
+                color: #ced4da;
+                text-shadow: 0 0 10px #001d3d;
+                box-shadow: inset 0 0 10px -2px black;
+
+                &:hover{
+                    letter-spacing: 1.2px;
+                }
+            }
+
+            button:last-child{
+                width: 120px;
+                height: 35px;
+                background: limegreen;
+                border: none;
+                border-radius: 1rem 0 1rem 0;
+                font-size: 18px;
+                color: #ced4da;
+                text-shadow: 0 0 10px #001d3daf;
+                box-shadow: inset 0 0 10px -3px black;
+
+                &:hover{
+                    letter-spacing: 1.2px;
+                }
+            }
+        }
+        
+    }
+}

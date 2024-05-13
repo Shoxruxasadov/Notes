@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Notes</title>
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Icon -->
+    <link rel="icon" href="./img/icon.png" />
+  </head>
+  <body>
+    <div class="modal">
+      <div class="modal-adduser">
+        <div onclick="toggleModal()" class="modal-close">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="modal-title">
+          <h1>Add User</h1>
+        </div>
+        <div class="modal-inp">
+          <input id="addUserInp" type="text" placeholder="Enter name user" />
+        </div>
+        <div class="modal-save">
+          <button onclick="toggleModal()">close</button>
+          <button onclick="pushUsers()">save</button>
+        </div>
+      </div>
+    </div>
+    <div id="body">
+      <section id="left">
+        <button onclick="toggleModal()" class="add-user-btn">Add User</button>
+        <hr />
+        <div id="usersBtn" class="users-group-btn"></div>
+      </section>
+      <section id="right">
+        <div id="noteTitle">
+          <a href="/">
+            <img src="./img/favicon.png" />
+            <h1>Note Saver</h1>
+          </a>
+        </div>
+
+        <div id="notesUser">
+          <div id="note">
+            <div class="add-notes-group">
+              <input placeholder="Add Notes" id="notesAddInp" type="text" />
+              <div id="btnSaves"></div>
+            </div>
+            <div id="notesContent"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

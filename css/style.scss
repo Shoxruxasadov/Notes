@@ -1,0 +1,244 @@
+@import "./global";
+
+#body {
+    height: 100%;
+    display: flex;
+
+    #left {
+        width: 20%;
+        height: 100%;
+        overflow: scroll;
+        padding: 20px;
+        background-image: url(../img/note.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-right: 2px solid #b2b1b1;
+      
+
+        .add-user-btn {
+            width: 100%;
+            height: 45px;
+            background: #fcb045;
+            color: #001d3d;
+            border: none;
+            border-radius: 0.6rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            font-size: 19px;
+
+            &:hover{
+                letter-spacing: 1.6px;
+            }
+        }
+
+        hr {
+            margin: 15px 1px;
+            border-color: #ced4da;
+            border-radius: 50%;
+        }
+
+        .users-group-btn {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .users-btn {
+                width: 100%;
+                height: 35px;
+                background: #ced4da;
+                color: #001d3d;
+                border: none;
+                border-radius: 0.6rem;
+                font-weight: 600;
+                letter-spacing: 1.2px;
+                font-size: 17px;
+                text-align: start;
+                padding: 0 15px;
+                position: relative;
+                overflow: hidden;
+
+                &:hover{
+                    letter-spacing: 2.4px;
+                }
+
+                &:hover .delete-users{
+                    transform: scale(1);
+                }
+
+                .delete-users{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    z-index: 900;
+                    top: 0;
+                    right: 0;
+                    width: 35px;
+                    height: 35px;
+                    background: red;
+                    border-radius: 0 0.6rem 0.6rem 0;
+                    transform: scale(0);
+                    cursor: pointer;
+
+                    i{
+                        color: #ced4da;
+                        font-size: 15px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    #right{
+        background-image: url(../img/back.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 80%;
+        overflow: auto;
+
+        #noteTitle {
+            height: 4%;
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+            background-color: #1e605356;
+        
+            a {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+        
+                img {
+                    max-height: 100%;
+                    cursor: pointer;
+                }
+        
+                h1 {
+                    color: #f8ff79;
+                    font-family: $notesFonts;
+                    font-size: 24px;
+                    font-weight: 300;
+                    height: 105%;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        #notesUser{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            padding: 20px;
+
+            .add-notes-group{
+                width: 100%;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 3px;
+                margin-bottom: 30px;
+
+                input{
+                    height: 45px;
+                    width: 90%;
+                    background-color: #ced4da;
+                    box-shadow: 0 0 10px -2px #ced4da;
+                    border: none;
+                    color: #001d3d;
+                    border-radius: 1rem 0 0 1rem;
+                    font-size: 18px;
+                    font-weight: 600;
+                    padding: 0 20px;
+                  
+
+                    &:focus{
+                        background-color: #b2b1b1;
+                    }
+                }
+
+                #btnSaves{
+                    height: 45px;
+                    width: 10%;
+                    button{
+                        height: 100%;
+                        width: 100%;
+                        background-color: #ced4da;
+                        box-shadow: 0 0 10px -2px #ced4da;
+                        border: none;
+                        color: #001d3d;
+                        border-radius: 0 1rem 1rem 0;
+                        font-size: 18px;
+                        font-weight: 600;
+    
+                        &:hover{
+                            background-color: #b2b1b1;
+                        }
+                        &:active{
+                            transform: scale(0.95);
+                        }
+                    }
+                }
+                
+            }
+
+            #notesContent{
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                padding: 0 0.1px;
+
+                .content{
+                    display: flex;
+                    align-items: center;
+                    height: 40px;
+                    background-color: #ced4da3a;
+                    border: 1px solid #ced4da;
+                    box-shadow: 0 0 3px #ced4da, inset 0 0 3px #ced4da;
+                    backdrop-filter: blur(5px);
+                    border-radius: 0.8rem;
+                    padding: 2px 12px;
+                    font-size: 15px;
+                    color: #ebebeb;
+                    letter-spacing: 1px;
+                    overflow: hidden;
+
+                    &:hover .delete-users{
+                        transform: scale(1);
+                    }
+
+                    .delete-users{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        z-index: 900;
+                        top: 0;
+                        right: 0;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 0 0.6rem 0.6rem 0;
+                        transform: scale(0);
+                        cursor: pointer;
+    
+                        i{
+                            color: #ced4da;
+                            font-size: 18px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
